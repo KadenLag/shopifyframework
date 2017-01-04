@@ -1,0 +1,16 @@
+[
+  {
+    "logo": "https:\/\/cdn.shopify.com\/s\/global\/branding\/shopify_logo_256x256.png",
+    "settings": [
+      {
+        "content": "Delta Frame",
+        "type": "header"
+      },
+      {
+        "content": "This theme is fully supported by Shopify. No appliances were injured making this theme.",
+        "type": "paragraph"
+      }
+    ],
+    "name": "theme_info"
+  }
+]
