@@ -1,0 +1,68 @@
+/* ========================================================== */
+/* WIREFRAMING STYLES
+/* ========================================================== */
+
+div {
+  border: 1px solid gray;
+}
+
+h1 {
+	font-family: 'Lora', serif;
+	font-size: 3.6em;
+	color: #353136;
+	text-rendering: optimizeLegibility;
+	text-shadow: 0 0 1px transparent;
+	margin: 0px;
+}
+
+h2 {
+	font-family: 'Lora', serif;
+	font-size: 2.8em;
+	color: #353136;
+	text-rendering: optimizeLegibility;
+	text-shadow: 0 0 1px transparent;
+	margin: 0px;
+}
+
+h3 {
+	font-family: 'Lora', serif;
+	font-size: 2.4em;
+	color: #353136;
+	text-rendering: optimizeLegibility;
+	text-shadow: 0 0 1px transparent;
+	margin: 0px;
+}
+
+h4 {
+	font-family: 'Lora', serif;
+	font-size: 1.8em;
+	color: #353136;
+	text-rendering: optimizeLegibility;
+	text-shadow: 0 0 1px transparent;
+	margin: 0px;
+}
+
+.alt-font{
+	font-family: 'Lobster', cursive !important;
+}
+
+p {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.2em;
+	text-rendering: optimizeLegibility;
+	text-shadow: 0 0 1px transparent;
+}
+
+hr {
+	padding: 5px 0px 5px 0px;
+	border-bottom: 1px solid #f1f1f1;
+}
+
+/* ========================================================== */
+/* COLORS
+/* ========================================================== */
+
+.pink {color: #DB5D7B;}
+.black {color: #353136;}
+.dark-blue {color: #5797CF;}
+.light-blue {color: #88C1EF;}
