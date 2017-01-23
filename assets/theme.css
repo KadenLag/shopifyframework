@@ -5,6 +5,14 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+.v-separator {
+  max-height: 100%;
+  width: 1px;
+  background: gainsboro;
+  display: block;
+  min-height: 35px;
+}
+
 .head-message-container {
   background-color: #292929;
   width: 100%;
@@ -45,6 +53,49 @@ header.header .input-group {
   float: right;
 }
 
+/**
+*
+* Testing
+*
+**/
+@media (max-width: 320px) {
+  .include-media-test {
+    background-color: #def;
+  }
+  .include-media-test:before {
+    content: "<=phone";
+  }
+}
+@media (min-width: 321px) {
+  .include-media-test {
+    background-color: #abc;
+  }
+  .include-media-test:before {
+    content: ">phone";
+  }
+}
+@media (min-width: 815px) and (max-width: 1023px) {
+  .include-media-test {
+    background-color: #fed;
+  }
+  .include-media-test:before {
+    content: ">=815px, <desktop";
+  }
+}
+@media (min-width: 1024px) {
+  .include-media-test {
+    background-color: #fab;
+  }
+  .include-media-test:before {
+    content: ">=desktop";
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .include-media-test:after {
+    content: "Retina" !important;
+  }
+}
+
 .main-nav li.nav-item {
   display: inline-block;
   position: relative;
@@ -76,19 +127,44 @@ header.header .input-group {
   margin-bottom: -11px;
 }
 .main-nav .top-level.nav-item a.nav-link,
-.main-nav a.nav-home-link {
-  color: #292929;
+.main-nav .nav-item .nav-home-link {
+  font-size: 1.2rem;
   height: 30px;
+  color: #292929;
   font-weight: 500;
-  font-size: 18px;
   margin-bottom: 0px;
   border: 2px solid transparent;
+  /* 		@include media(">phone") {
+  			font-size: 0.8rem;
+  			height: 15px;
+  		}
+  		@include media(">=desktop") {
+  			
+  		} */
 }
 .main-nav .top-level.nav-item a.nav-link.nav-home-link,
-.main-nav a.nav-home-link.nav-home-link {
-  font-size: 20px;
-  width: 50px;
+.main-nav .nav-item .nav-home-link.nav-home-link {
+  font-size: 1.6rem;
+  height: 30px;
+  width: 25px;
   padding-left: 0px;
+  display: inline;
+  position: absolute;
+  top: 3px;
+  left: -31px;
+  transition: 0.3s;
+  /* 			@include media(">phone") {
+  				font-size: 1.1rem;
+  				height: 15px;
+  			}
+  			@include media(">=desktop") {
+  				font-size: 1.6rem;
+  				height: 30px;
+  			} */
+}
+.main-nav .top-level.nav-item a.nav-link.nav-home-link:hover,
+.main-nav .nav-item .nav-home-link.nav-home-link:hover {
+  color: #f26522;
 }
 .main-nav ul.navbar-nav .dropdown-menu {
   border-radius: 0px;
@@ -121,19 +197,63 @@ footer.footer {
 }
 
 .xs-navbar {
-  height: 50px;
+  width: 100%;
+  height: 65px;
+  margin: 0;
+  /* li {
+    background: url(data:image/gif;base64,R0lGODlhEAAQAMQAAORHHOVSKudfOulrSOp3WOyDZu6QdvCchPGolfO0o/XBs/fNwfjZ0frl3/zy7////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAkAABAALAAAAAAQABAAAAVVICSOZGlCQAosJ6mu7fiyZeKqNKToQGDsM8hBADgUXoGAiqhSvp5QAnQKGIgUhwFUYLCVDFCrKUE1lBavAViFIDlTImbKC5Gm2hB0SlBCBMQiB0UjIQA7)
+      no-repeat
+      left center;
+    padding: 5px 0 5px 25px;
+  } */
+}
+.xs-navbar .toggle-button-container {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+.xs-navbar .toggle-button-container .toggle-button {
+  width: 65px;
+  height: 65px;
+  padding: 0;
+  margin: 0;
+}
+.xs-navbar .xs-head-navbar-logo-container {
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+.xs-navbar .xs-head-navbar-logo-container .xs-head-navbar-logo {
+  padding: 0 10px;
+}
+.xs-navbar .mini-cart-container {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  padding-right: 10px;
+}
+.xs-navbar .mini-cart-container .fa {
+  font-size: 18px;
+  position: absolute;
+  top: 43%;
+  left: 39%;
+  color: #f26522;
 }
 
 .xs-nav-container {
   margin: 0;
 }
 .xs-nav-container .xs-nav-logo-container {
-  height: 51px;
+  height: 67px;
   width: 100%;
   background: #fff;
   padding: 10px;
   margin-top: 0px;
   border-bottom: 1px solid #ccc;
+  display: flex;
+  align-content: center;
+  align-items: center;
 }
 .xs-nav-container .xs-nav-logo-container .xs-nav-logo {
   width: 90%;
@@ -151,9 +271,13 @@ footer.footer {
   display: flex;
   align-content: center;
   align-items: center;
-  /* padding-left: 10px; */
+  padding-left: 10px;
   border-bottom: 1px solid #c2c2c2;
   transition: .2s;
+}
+.xs-nav-container .xs-nav .xs-nav-item.submenu-item {
+  font-size: 14px;
+  margin-left: 10px;
 }
 .xs-nav-container .xs-nav .xs-nav-item:hover {
   background: #f26522;
@@ -163,7 +287,16 @@ footer.footer {
   color: #292929;
   font-weight: 700;
   width: 100%;
-  text-align: center;
+  text-align: left;
+}
+.xs-nav-container .xs-nav .xs-nav-link:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+#main {
+  z-index: 3;
+  background: #fff;
 }
 
 .slideout-menu {
@@ -173,7 +306,7 @@ footer.footer {
   top: 0;
   bottom: 0;
   right: 0;
-  z-index: 999;
+  z-index: 2;
   width: 256px;
   min-height: 100vh;
   overflow-y: scroll;
@@ -194,9 +327,12 @@ footer.footer {
   will-change: transform;
 }
 
-body > .slideout-open {
+.slideout-open #main {
   -webkit-overflow-scrolling: touch;
   overflow-y: auto;
+  -webkit-box-shadow: inset 1px -10px 10px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: inset 1px -10px 10px 0px rgba(0, 0, 0, 0.75);
 }
 
 .slideout-open,
@@ -404,6 +540,7 @@ span.old-price {
   display: flex;
   align-items: center;
   align-content: center;
+  padding: 0;
 }
 .tab-content.product-ranges .product-range-details {
   height: 400px;
@@ -431,6 +568,12 @@ span.old-price {
 }
 .tab-content.product-ranges ul.nav-tabs.product-range-gallery {
   border-bottom: 0px;
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+.tab-content.product-ranges ul.nav-tabs.product-range-gallery .nav-item {
+  margin: 0 auto -1px auto;
 }
 .tab-content.product-ranges ul.nav-tabs.product-range-gallery .nav-item .nav-link {
   border: 1px solid gainsboro;
@@ -531,5 +674,114 @@ img.brand_logo:hover {
   margin: 0 auto;
   width: 70%;
 }
+
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+.hamburger {
+  padding: 15px 15px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+}
+.hamburger:hover {
+  opacity: 0.7;
+}
+
+.hamburger-box {
+  width: 30px;
+  height: 18px;
+  display: inline-block;
+  /* position: relative; */
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -1px;
+}
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+  width: 30px;
+  height: 2px;
+  background-color: #000;
+  border-radius: 4px;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+.hamburger-inner::before, .hamburger-inner::after {
+  content: "";
+  display: block;
+}
+.hamburger-inner::before {
+  top: -8px;
+}
+.hamburger-inner::after {
+  bottom: -8px;
+}
+
+.is-active .hamburger-inner::before, .is-active .hamburger-inner::after {
+  width: 18px;
+}
+
+/* @import "types/3dx";
+@import "types/3dx-r";
+@import "types/3dy";
+@import "types/3dy-r";
+@import "types/arrow";
+@import "types/arrow-r"; */
+/*
+ * Arrow Alt
+ */
+.hamburger--arrowalt .hamburger-inner::before {
+  transition: top 0.1s 0.15s ease, transform 0.15s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.hamburger--arrowalt .hamburger-inner::after {
+  transition: bottom 0.1s 0.15s ease, transform 0.15s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.hamburger--arrowalt.is-active .hamburger-inner::before {
+  top: 4px;
+  transform: translate3d(-6px, -7.5px, 0) rotate(-45deg) scale(0.7, 1);
+  transition: top 0.1s ease, transform 0.15s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+}
+.hamburger--arrowalt.is-active .hamburger-inner::after {
+  bottom: 4px;
+  transform: translate3d(-6px, 7.5px, 0) rotate(45deg) scale(0.7, 1);
+  transition: bottom 0.1s ease, transform 0.15s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+}
+
+/* @import "types/arrowalt-r";
+@import "types/boring";
+@import "types/collapse";
+@import "types/collapse-r";
+@import "types/elastic";
+@import "types/elastic-r";
+@import "types/emphatic";
+@import "types/emphatic-r";
+@import "types/slider";
+@import "types/slider-r";
+@import "types/spring";
+@import "types/spring-r";
+@import "types/stand";
+@import "types/stand-r";
+@import "types/spin";
+@import "types/spin-r";
+@import "types/squeeze";
+@import "types/vortex";
+@import "types/vortex-r"; */
 
 /*# sourceMappingURL=theme.css.map */
